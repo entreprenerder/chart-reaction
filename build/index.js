@@ -452,10 +452,13 @@ module.exports = warning;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__(7);
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
@@ -470,31 +473,30 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(4);
-var styled_components_1 = __webpack_require__(7);
-var AxisLabel = styled_components_1.default('text')(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"], ["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"])), function (props) { return props.color ? props.color : '#000'; });
-var DataValue = styled_components_1.default('text')(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"], ["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var XLabels = styled_components_1.default('g')(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var YLabels = styled_components_1.default('g')(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var Axis = styled_components_1.default('line')(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var DataDot = styled_components_1.default('circle')(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"], ["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"])), function (props) { return props.borderColor ? props.borderColor : (props.color ? props.color : '#000'); }, function (props) { return props.color ? props.color : '#000'; });
-var XGrid = styled_components_1.default('g')(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
-var YGrid = styled_components_1.default('g')(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
-var drawLine = styled_components_1.keyframes(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"], ["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"])));
-var Line = styled_components_1.default('path')(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
+
+
+var AxisLabel = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('text')(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"], ["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"])), function (props) { return props.color ? props.color : '#000'; });
+var DataValue = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('text')(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"], ["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var XLabels = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var YLabels = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var Axis = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('line')(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var DataDot = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('circle')(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"], ["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"])), function (props) { return props.borderColor ? props.borderColor : (props.color ? props.color : '#000'); }, function (props) { return props.color ? props.color : '#000'; });
+var XGrid = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
+var YGrid = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
+var drawLine = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["b" /* keyframes */])(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"], ["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"])));
+var Line = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('path')(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
     "\n"])), function (_a) {
     var animation = _a.animation;
     var draw = animation && ("\n      stroke-dasharray: 1500;\n      stroke-dashoffset: 1500;\n      animation: " + drawLine + " 3s forwards 1\n    ");
     return draw;
 });
-var LineShadow = styled_components_1.default('path')(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
+var LineShadow = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('path')(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
     "\n"])), function (_a) {
     var animation = _a.animation;
     var draw = animation && ("\n      stroke-dasharray: 1500;\n      stroke-dashoffset: 1500;\n      animation: " + drawLine + " 3s forwards 1\n    ");
     return draw;
 });
-var LineChart = (function (_super) {
+var LineChart = /** @class */ (function (_super) {
     __extends(LineChart, _super);
     function LineChart() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -502,21 +504,25 @@ var LineChart = (function (_super) {
     LineChart.prototype.render = function () {
         var _a = this.props, data = _a.data, yName = _a.yName, xName = _a.xName, yNameColor = _a.yNameColor, xNameColor = _a.xNameColor, showXGrid = _a.showXGrid, showYGrid = _a.showYGrid, xGridColor = _a.xGridColor, yGridColor = _a.yGridColor, xGridWidth = _a.xGridWidth, yGridWidth = _a.yGridWidth, showXAxis = _a.showXAxis, showYAxis = _a.showYAxis, xAxisColor = _a.xAxisColor, yAxisColor = _a.yAxisColor, xAxisWidth = _a.xAxisWidth, yAxisWidth = _a.yAxisWidth, showXLables = _a.showXLables, showYLables = _a.showYLables, xLabelColor = _a.xLabelColor, yLabelColor = _a.yLabelColor, showValues = _a.showValues, valueColor = _a.valueColor, width = _a.width, height = _a.height, responsive = _a.responsive, yIncrement = _a.yIncrement, paddingTop = _a.paddingTop, paddingBottom = _a.paddingBottom, paddingRight = _a.paddingRight, paddingLeft = _a.paddingLeft, dots = _a.dots, dotColor = _a.dotColor, dotBorderColor = _a.dotBorderColor, lineColor = _a.lineColor, lineWidth = _a.lineWidth, lineCurved = _a.lineCurved, areaColor = _a.areaColor, backgroundColor = _a.backgroundColor, lineBlur = _a.lineBlur, hideLine = _a.hideLine, lineShadow = _a.lineShadow, lineRoundedEnds = _a.lineRoundedEnds, animation = _a.animation;
         var values = data.map(function (item) { return item.value; });
+        //Axis Length
         var yMin = this.props.yMin ? this.props.yMin : 0;
         var yMax = this.props.yMax ? this.props.yMax : Math.max.apply(Math, values);
         var yAxisLength = height - paddingTop - paddingBottom;
         var xAxisLength = width - paddingLeft - paddingRight;
         var yBottom = yAxisLength + paddingTop;
         var xRight = paddingLeft + xAxisLength;
+        //Axis Scaling
         var numberOfPoints = data.length;
         var yScale = yAxisLength / (yMax - yMin);
         var xScale = xAxisLength / (numberOfPoints - 1);
+        //X Coordinates
         var xValues = [paddingLeft];
         var horizontalValue = paddingLeft;
         for (var i = 1; i < numberOfPoints; i++) {
             horizontalValue = horizontalValue + xScale;
             xValues.push(horizontalValue);
         }
+        //Y Coordinates
         function yCoord(value) {
             return (yAxisLength - (value * yScale)) + (yScale * yMin) + paddingTop;
         }
@@ -529,7 +535,9 @@ var LineChart = (function (_super) {
             }
         }
         var yValues = values.map(function (item) { return yCoord(item); });
+        //Coordinates
         var coords = yValues.map(function (item, i) { return [xValues[i], item]; });
+        //https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
         var line = function (pointA, pointB) {
             var lengthX = pointB[0] - pointA[0];
             var lengthY = pointB[1] - pointA[1];
@@ -561,11 +569,12 @@ var LineChart = (function (_super) {
             return d;
         };
         var curve = svgPath(coords, bezierCommand);
+        //Line Chart
         var points = coords.map(function (item) { return item[0] + " " + item[1]; }).join(" ");
-        var circles = coords.map(function (item, i) { return React.createElement(DataDot, { key: "circle_" + i, cx: item[0], cy: item[1], r: "5", color: dotColor, borderColor: dotBorderColor }); });
+        var circles = coords.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](DataDot, { key: "circle_" + i, cx: item[0], cy: item[1], r: "5", color: dotColor, borderColor: dotBorderColor }); });
         function guassianBlur(blur, id) {
-            return (React.createElement("filter", { id: id, x: "0", y: "0" },
-                React.createElement("feGaussianBlur", { in: "SourceGraphic", stdDeviation: blur })));
+            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("filter", { id: id, x: "0", y: "0" },
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("feGaussianBlur", { in: "SourceGraphic", stdDeviation: blur })));
         }
         function displayLineShadow() {
             var xOffset = lineShadow.xOffset, yOffset = lineShadow.yOffset, spread = lineShadow.spread, color = lineShadow.color;
@@ -573,17 +582,21 @@ var LineChart = (function (_super) {
             var shadowPoints = shadowCoords.map(function (item) { return item[0] + xOffset + " " + (item[1] + yOffset); }).join(" ");
             var shadowCurve = svgPath(shadowCoords, bezierCommand);
             var shadowLine = lineCurved ? shadowCurve : "M " + shadowPoints;
-            return (React.createElement(LineShadow, { fill: "none", stroke: color, strokeWidth: spread, d: shadowLine, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: 'url(#lineShadow)', animation: animation }));
+            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](LineShadow, { fill: "none", stroke: color, strokeWidth: spread, d: shadowLine, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: 'url(#lineShadow)', animation: animation }));
         }
-        var lineChart = (React.createElement(Line, { fill: "none", stroke: lineColor ? (lineColor.constructor === Object ? 'url(#lineGradient)' : lineColor) : '#000', strokeWidth: lineWidth, d: lineCurved ? curve : "M " + points, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: lineBlur && 'url(#lineBlur)', animation: animation }));
-        var xLabels = data.map(function (item, i) { return React.createElement("text", { key: "xLabel_" + i, x: xValues[i], y: yBottom + 20 }, item.label); });
-        var yLabels = yLabelValues.map(function (item, i) { return React.createElement("text", { key: "yLabel_" + i, x: paddingLeft - 10, y: yCoord(item) }, item); });
-        var xGridLines = yLabelValues.map(function (item, i) { return React.createElement("line", { key: "xGridLine_" + i, x1: paddingLeft, x2: xRight, y1: yCoord(item), y2: yCoord(item), strokeWidth: yGridWidth }); });
+        var lineChart = (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Line, { fill: "none", stroke: lineColor ? (lineColor.constructor === Object ? 'url(#lineGradient)' : lineColor) : '#000', strokeWidth: lineWidth, d: lineCurved ? curve : "M " + points, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: lineBlur && 'url(#lineBlur)', animation: animation }));
+        //Axis Labels
+        var xLabels = data.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("text", { key: "xLabel_" + i, x: xValues[i], y: yBottom + 20 }, item.label); });
+        var yLabels = yLabelValues.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("text", { key: "yLabel_" + i, x: paddingLeft - 10, y: yCoord(item) }, item); });
+        //Grids
+        var xGridLines = yLabelValues.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("line", { key: "xGridLine_" + i, x1: paddingLeft, x2: xRight, y1: yCoord(item), y2: yCoord(item), strokeWidth: yGridWidth }); });
         xGridLines.shift();
-        var yGridLines = xValues.map(function (item, i) { return React.createElement("line", { key: "yGridLine_" + i, x1: item, x2: item, y1: paddingTop, y2: yBottom, strokeWidth: xGridWidth }); });
+        var yGridLines = xValues.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("line", { key: "yGridLine_" + i, x1: item, x2: item, y1: paddingTop, y2: yBottom, strokeWidth: xGridWidth }); });
         yGridLines.shift();
-        var background = React.createElement("polyline", { fill: backgroundColor, points: paddingLeft + " " + paddingTop + " " + xRight + " " + paddingTop + " " + xRight + " " + yBottom + " " + paddingLeft + " " + yBottom });
-        var dataValues = coords.map(function (item, i) { return React.createElement(DataValue, { key: "dataValue_" + i, x: item[0], y: item[1] - 10, color: valueColor }, values[i]); });
+        var background = __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("polyline", { fill: backgroundColor, points: paddingLeft + " " + paddingTop + " " + xRight + " " + paddingTop + " " + xRight + " " + yBottom + " " + paddingLeft + " " + yBottom });
+        //Data values
+        var dataValues = coords.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](DataValue, { key: "dataValue_" + i, x: item[0], y: item[1] - 10, color: valueColor }, values[i]); });
+        //Gradients
         function linearGradient(colors, id) {
             var linearConfig = {
                 vertical: {
@@ -608,41 +621,42 @@ var LineChart = (function (_super) {
                 }
             };
             var c = linearConfig[colors.direction];
-            return (React.createElement("linearGradient", { x1: "0", y1: c.y1, x2: c.x2, y2: c.y2, id: id }, colors.colors.map(function (item, i) { return React.createElement("stop", { key: id + "_" + i, stopColor: item.color, offset: item.offset + "%" }); })));
+            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("linearGradient", { x1: "0", y1: c.y1, x2: c.x2, y2: c.y2, id: id }, colors.colors.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("stop", { key: id + "_" + i, stopColor: item.color, offset: item.offset + "%" }); })));
         }
         var areaGradient = areaColor && ((areaColor.constructor === Object) && linearGradient(areaColor, 'areaGradient'));
         var lineGradient = lineColor && ((lineColor.constructor === Object) && linearGradient(lineColor, 'lineGradient'));
+        //Area chart
         var closeArea = xRight + " " + yBottom + " " + paddingLeft + " " + yBottom;
         var areaLine = lineCurved ? curve + " L " + closeArea : "M " + points + " " + closeArea;
-        var area = areaColor && React.createElement("path", { fill: areaColor ? (areaColor.constructor === Object ? 'url(#areaGradient)' : areaColor) : 'none', d: areaLine });
-        return (React.createElement("div", null,
-            React.createElement("svg", { width: responsive ? "100%" : width, height: responsive ? "100%" : height, viewBox: "0 0 " + width + " " + height },
-                React.createElement("defs", null,
+        var area = areaColor && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("path", { fill: areaColor ? (areaColor.constructor === Object ? 'url(#areaGradient)' : areaColor) : 'none', d: areaLine });
+        return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("svg", { width: responsive ? "100%" : width, height: responsive ? "100%" : height, viewBox: "0 0 " + width + " " + height },
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("defs", null,
                     areaGradient,
                     lineGradient,
                     lineBlur && guassianBlur(lineBlur, 'lineBlur'),
                     lineShadow && guassianBlur(lineShadow.blur, 'lineShadow')),
-                React.createElement("g", null,
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("g", null,
                     backgroundColor && background,
-                    showYGrid && React.createElement(YGrid, { color: yGridColor }, yGridLines),
-                    showXGrid && React.createElement(XGrid, { color: xGridColor }, xGridLines),
-                    showYAxis && React.createElement(Axis, { strokeWidth: yAxisWidth, color: yAxisColor, x1: paddingLeft, x2: paddingLeft, y1: paddingTop, y2: yBottom }),
-                    showXAxis && React.createElement(Axis, { strokeWidth: xAxisWidth, color: xAxisColor, x1: paddingLeft, x2: xRight, y1: yBottom, y2: yBottom })),
+                    showYGrid && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](YGrid, { color: yGridColor }, yGridLines),
+                    showXGrid && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](XGrid, { color: xGridColor }, xGridLines),
+                    showYAxis && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Axis, { strokeWidth: yAxisWidth, color: yAxisColor, x1: paddingLeft, x2: paddingLeft, y1: paddingTop, y2: yBottom }),
+                    showXAxis && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Axis, { strokeWidth: xAxisWidth, color: xAxisColor, x1: paddingLeft, x2: xRight, y1: yBottom, y2: yBottom })),
                 area,
-                React.createElement(XLabels, { color: xLabelColor },
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](XLabels, { color: xLabelColor },
                     showXLables && xLabels,
-                    React.createElement(AxisLabel, { color: xNameColor, x: (xAxisLength / 2) + paddingLeft, y: yBottom + 50 }, xName)),
-                React.createElement(YLabels, { color: yLabelColor },
+                    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](AxisLabel, { color: xNameColor, x: (xAxisLength / 2) + paddingLeft, y: yBottom + 50 }, xName)),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](YLabels, { color: yLabelColor },
                     showYLables && yLabels,
-                    React.createElement(AxisLabel, { color: yNameColor, x: paddingLeft - 40, y: (yAxisLength / 2) + paddingTop }, yName)),
+                    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](AxisLabel, { color: yNameColor, x: paddingLeft - 40, y: (yAxisLength / 2) + paddingTop }, yName)),
                 lineShadow && displayLineShadow(),
                 hideLine || lineChart,
                 dots && circles,
                 showValues && dataValues)));
     };
     return LineChart;
-}(React.Component));
-exports.default = LineChart;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+/* harmony default export */ __webpack_exports__["default"] = (LineChart);
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11;
 
 
@@ -651,16 +665,15 @@ var templateObject_1, templateObject_2, templateObject_3, templateObject_4, temp
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(process, module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "css", function() { return css; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keyframes", function() { return keyframes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "injectGlobal", function() { return injectGlobal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isStyledComponent", function() { return isStyledComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "consolidateStreamedStyles", function() { return consolidateStreamedStyles; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeProvider", function() { return ThemeProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withTheme", function() { return wrapWithTheme; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServerStyleSheet", function() { return ServerStyleSheet; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyleSheetManager", function() { return StyleSheetManager; });
+/* WEBPACK VAR INJECTION */(function(process, module) {/* unused harmony export css */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return keyframes; });
+/* unused harmony export injectGlobal */
+/* unused harmony export isStyledComponent */
+/* unused harmony export consolidateStreamedStyles */
+/* unused harmony export ThemeProvider */
+/* unused harmony export withTheme */
+/* unused harmony export ServerStyleSheet */
+/* unused harmony export StyleSheetManager */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_plain_object__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_plain_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_is_plain_object__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylis__ = __webpack_require__(11);
@@ -2703,7 +2716,7 @@ var styled = _styled(StyledComponent, constructWithOptions);
 /* Export everything */
 
 
-/* harmony default export */ __webpack_exports__["default"] = (styled);
+/* harmony default export */ __webpack_exports__["a"] = (styled);
 //# sourceMappingURL=styled-components.browser.es.js.map
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(8)(module)))
