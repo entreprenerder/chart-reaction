@@ -1,6 +1,6 @@
 # Chart Reaction
 
-[![GitHub issues](https://img.shields.io/github/issues/entreprenerder/chart-reaction.svg)](https://github.com/entreprenerder/chart-reaction/issues)[![Twitter](https://img.shields.io/twitter/url/https/github.com/entreprenerder/chart-reaction.svg?style=social)](https://twitter.com/intent/tweet?text=A JS chart library for React.js!:&url=https%3A%2F%2Fgithub.com%2Fentreprenerder%2Fchart-reaction)
+[![GitHub issues](https://img.shields.io/github/issues/entreprenerder/chart-reaction.svg)](https://github.com/entreprenerder/chart-reaction/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/entreprenerder/chart-reaction.svg?style=social)](https://twitter.com/intent/tweet?text=A JS chart library for React.js!:&url=https%3A%2F%2Fgithub.com%2Fentreprenerder%2Fchart-reaction)
 
 `chart-reaction` is a React component library for charting.
 
