@@ -1,3 +1,7 @@
+# Chart Reaction
+
+[![beta]]
+
 `chart-reaction` is a React component library for charting.
 
 It is still very much in beta. Right now the `LineChart` component exists. There will be more features and more variety of charts coming soon.
@@ -5,16 +9,16 @@ It is still very much in beta. Right now the `LineChart` component exists. There
 There will also be more documentation coming soon. Thank you for your patience :)
 
 
-# Line Chart
+## Line Chart
 
 
-## Example
+### Example
 <!-- prettier-ignore -->
 ```JSX
 import React from 'react';
 import {LineChart} from 'chart-reaction';
 
-const Home = (props) => {
+const Example = (props) => {
 
   const lineChartData = [
     {
