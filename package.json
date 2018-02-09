@@ -1,6 +1,6 @@
 {
   "name": "chart-reaction",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "React component library for charting",
   "main": "build/index.js",
   "peerDependencies": {
@@ -15,12 +15,15 @@
   "license": "MIT",
   "author": "Jason Clements",
   "devDependencies": {
-    "@types/react": "^16.0.36",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "react": "^16.2.0",
     "source-map-loader": "^0.2.3",
     "styled-components": "^3.1.6",
-    "ts-loader": "^3.2.0",
-    "typescript": "^2.7.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0"
   }

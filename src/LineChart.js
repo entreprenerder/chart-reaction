@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   AxisLabel,
   DataValue,
@@ -15,11 +15,11 @@ import {
 
 
 
-export class LineChart extends React.Component<any,any> {
+export class LineChart extends React.Component {
 
-  curve = (points:any) => {
+  curve(points) {
     //https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
-    const line = (pointA:any, pointB:any) => {
+    const line = (pointA, pointB) => {
       const lengthX = pointB[0] - pointA[0]
       const lengthY = pointB[1] - pointA[1]
       return {
@@ -28,7 +28,7 @@ export class LineChart extends React.Component<any,any> {
       }
     }
 
-    const controlPoint = (current:any, previous:any, next:any, reverse:any) => {
+    const controlPoint = (current, previous, next, reverse) => {
       const p = previous || current;
       const n = next || current;
       const smoothing = 0.2;
@@ -40,13 +40,13 @@ export class LineChart extends React.Component<any,any> {
       return [x, y];
     }
 
-    const bezierCurve = (point:any, i:any, a:any) => {
+    const bezierCurve = (point, i, a) => {
       const [cpsX, cpsY] = controlPoint(a[i - 1], a[i - 2], point, false);
       const [cpeX, cpeY] = controlPoint(point, a[i - 1], a[i + 1], true);
       return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point[0]},${point[1]}`;
     }
 
-    const d = points.reduce((acc:any, point:any, i:any, a:any) => i === 0
+    const d = points.reduce((acc, point, i, a) => i === 0
       ? `M ${point[0]},${point[1]}`
       : `${acc} ${bezierCurve(point, i, a)}`
     , '');
@@ -102,7 +102,7 @@ export class LineChart extends React.Component<any,any> {
       animation
     } = this.props;
 
-    const values = data.map((item:any) => item.value);
+    const values = data.map((item) => item.value);
 
     //Axis Length
     const yMin = this.props.yMin ? this.props.yMin : 0;
@@ -126,7 +126,7 @@ export class LineChart extends React.Component<any,any> {
     }
 
     //Y Coordinates
-    function yCoord(value:number) {
+    function yCoord(value) {
       return (yAxisLength-(value*yScale))+(yScale*yMin)+paddingTop;
     }
 
@@ -138,16 +138,16 @@ export class LineChart extends React.Component<any,any> {
         yLabelValues.push(verticalValue);
       }
     }
-    const yValues = values.map((item:any) => yCoord(item));
+    const yValues = values.map((item) => yCoord(item));
 
     //Coordinates
-    const coords = yValues.map((item:any,i:number) => [xValues[i],item]);
+    const coords = yValues.map((item,i) => [xValues[i],item]);
 
     //Line Chart
-    const points = coords.map((item:any) => `${item[0]} ${item[1]}`).join(" ");
-    const circles = coords.map((item:any, i:number) => <DataDot key={`circle_${i}`} cx={item[0]} cy={item[1]} r="5" color={dotColor} borderColor={dotBorderColor}></DataDot>);
+    const points = coords.map((item) => `${item[0]} ${item[1]}`).join(" ");
+    const circles = coords.map((item, i) => <DataDot key={`circle_${i}`} cx={item[0]} cy={item[1]} r="5" color={dotColor} borderColor={dotBorderColor}></DataDot>);
 
-    function guassianBlur(blur:number,id:string) {
+    function guassianBlur(blur,id) {
       return (
         <filter id={id} x="0" y="0">
           <feGaussianBlur in="SourceGraphic" stdDeviation={blur} />
@@ -157,8 +157,8 @@ export class LineChart extends React.Component<any,any> {
 
     const displayLineShadow = () => {
       const {xOffset, yOffset, spread, color} = lineShadow;
-      const shadowCoords = coords.map((item:any) => [item[0]+xOffset,item[1]+yOffset]);
-      const shadowPoints = shadowCoords.map((item:any) => `${item[0]+xOffset} ${item[1]+yOffset}`).join(" ");
+      const shadowCoords = coords.map((item) => [item[0]+xOffset,item[1]+yOffset]);
+      const shadowPoints = shadowCoords.map((item) => `${item[0]+xOffset} ${item[1]+yOffset}`).join(" ");
       const shadowLine = lineCurved ? this.curve(shadowCoords) : `M ${shadowPoints}`;
       return (<LineShadow
        fill="none"
@@ -182,22 +182,22 @@ export class LineChart extends React.Component<any,any> {
     />);
 
     //Axis Labels
-    const xLabels = data.map((item:any, i:number) => <text key={`xLabel_${i}`} x={xValues[i]} y={yBottom+20}>{item.label}</text>);
-    const yLabels = yLabelValues.map((item:any, i:number) => <text key={`yLabel_${i}`} x={paddingLeft-10} y={yCoord(item)}>{item}</text>);
+    const xLabels = data.map((item, i) => <text key={`xLabel_${i}`} x={xValues[i]} y={yBottom+20}>{item.label}</text>);
+    const yLabels = yLabelValues.map((item, i) => <text key={`yLabel_${i}`} x={paddingLeft-10} y={yCoord(item)}>{item}</text>);
 
     //Grids
-    const xGridLines = yLabelValues.map((item:any, i:number) => <line key={`xGridLine_${i}`} x1={paddingLeft} x2={xRight} y1={yCoord(item)} y2={yCoord(item)} strokeWidth={yGridWidth} />);
+    const xGridLines = yLabelValues.map((item, i) => <line key={`xGridLine_${i}`} x1={paddingLeft} x2={xRight} y1={yCoord(item)} y2={yCoord(item)} strokeWidth={yGridWidth} />);
     xGridLines.shift();
-    const yGridLines = xValues.map((item:any,i:number) => <line key={`yGridLine_${i}`} x1={item} x2={item} y1={paddingTop} y2={yBottom} strokeWidth={xGridWidth} />);
+    const yGridLines = xValues.map((item,i) => <line key={`yGridLine_${i}`} x1={item} x2={item} y1={paddingTop} y2={yBottom} strokeWidth={xGridWidth} />);
     yGridLines.shift();
 
     const background = <polyline fill={backgroundColor} points={`${paddingLeft} ${paddingTop} ${xRight} ${paddingTop} ${xRight} ${yBottom} ${paddingLeft} ${yBottom}`} />
 
     //Data values
-    const dataValues = coords.map((item:any, i:number) => <DataValue key={`dataValue_${i}`} x={item[0]} y={item[1]-10} color={valueColor}>{values[i]}</DataValue>)
+    const dataValues = coords.map((item, i) => <DataValue key={`dataValue_${i}`} x={item[0]} y={item[1]-10} color={valueColor}>{values[i]}</DataValue>)
 
     //Gradients
-    function linearGradient(colors:any, id:string) {
+    function linearGradient(colors, id) {
       const linearConfig = {
         vertical: {
           x2: 0,
@@ -223,7 +223,7 @@ export class LineChart extends React.Component<any,any> {
       const c = linearConfig[colors.direction];
       return (
         <linearGradient x1="0" y1={c.y1} x2={c.x2} y2={c.y2} id={id}>
-          {colors.colors.map((item:any,i:number) => <stop key={`${id}_${i}`} stopColor={item.color} offset={`${item.offset}%`}></stop>)}
+          {colors.colors.map((item,i) => <stop key={`${id}_${i}`} stopColor={item.color} offset={`${item.offset}%`}></stop>)}
         </linearGradient>
       )
     }

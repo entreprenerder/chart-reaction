@@ -18,55 +18,55 @@ const fade = keyframes`
   }
 `;
 
-export const AxisLabel = styled<any,any>('text')`
+export const AxisLabel = styled('text')`
   font-weight: 700;
   text-transform: uppercase;
   font-size: 12px;
   fill: ${props => props.color ? props.color : '#000'};
 `;
 
-export const DataValue = styled<any,any>('text')`
+export const DataValue = styled('text')`
   font-size: 10px;
   fill: ${props => props.color ? props.color : '#000'};
   text-anchor: middle;
 `;
 
-export const XLabels = styled<any,any>('g')`
+export const XLabels = styled('g')`
   fill: ${props => props.color ? props.color : '#000'};
   text-anchor: right;
   font-size: 13px;
 `
 
-export const YLabels = styled<any,any>('g')`
+export const YLabels = styled('g')`
   fill: ${props => props.color ? props.color : '#000'};
   text-anchor: end;
   font-size: 13px;
 `
 
-export const Axis = styled<any,any>('line')`
+export const Axis = styled('line')`
   stroke: ${props => props.color ? props.color : '#000'};
   stroke-dasharray: 0;
 `
 
-export const DataDot = styled<any,any>('circle')`
+export const DataDot = styled('circle')`
   stroke: ${props => props.borderColor ? props.borderColor : (props.color ? props.color : '#000')};
   fill: ${props => props.color ? props.color : '#000'};
   stroke-width: 2;
 `;
 
-export const XGrid = styled<any,any>('g')`
+export const XGrid = styled('g')`
   stroke: ${props => props.color ? props.color : '#ccc'};
   stroke-dasharray: 0;
   stroke-width: 1;
 `
 
-export const YGrid = styled<any,any>('g')`
+export const YGrid = styled('g')`
   stroke: ${props => props.color ? props.color : '#ccc'};
   stroke-dasharray: 0;
   stroke-width: 1;
 `
 
-export const Line = styled<any,any>('path')`
+export const Line = styled('path')`
   ${({animation}) => {
     const draw = animation && (`
       stroke-dasharray: 1500;
@@ -77,7 +77,7 @@ export const Line = styled<any,any>('path')`
   }}
 `;
 
-export const LineShadow = styled<any,any>('path')`
+export const LineShadow = styled('path')`
   ${({animation}) => {
     const draw = animation && (`
       stroke-dasharray: 1500;
@@ -88,7 +88,7 @@ export const LineShadow = styled<any,any>('path')`
   }}
 `;
 
-export const AreaPath = styled<any,any>('path')`
+export const AreaPath = styled('path')`
   ${({animation}) => {
     const fadeArea = animation && (`
       opacity: 0;
