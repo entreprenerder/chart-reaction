@@ -1,6 +1,6 @@
 # Chart Reaction
 
-[![beta]]
+[![Latest Unstable Version](https://poser.pugx.org/phpunit/phpunit/v/unstable)](//packagist.org/packages/phpunit/phpunit)
 
 `chart-reaction` is a React component library for charting.
 
