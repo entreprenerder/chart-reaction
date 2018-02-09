@@ -456,13 +456,20 @@ module.exports = warning;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LineChart__ = __webpack_require__(7);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "LineChart", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["a"]; });
+
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LineChart; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__(7);
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles__ = __webpack_require__(8);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -475,33 +482,45 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 
-var AxisLabel = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('text')(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"], ["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"])), function (props) { return props.color ? props.color : '#000'; });
-var DataValue = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('text')(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"], ["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var XLabels = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var YLabels = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var Axis = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('line')(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"])), function (props) { return props.color ? props.color : '#000'; });
-var DataDot = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('circle')(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"], ["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"])), function (props) { return props.borderColor ? props.borderColor : (props.color ? props.color : '#000'); }, function (props) { return props.color ? props.color : '#000'; });
-var XGrid = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
-var YGrid = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('g')(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
-var drawLine = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["b" /* keyframes */])(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"], ["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"])));
-var Line = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('path')(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
-    "\n"])), function (_a) {
-    var animation = _a.animation;
-    var draw = animation && ("\n      stroke-dasharray: 1500;\n      stroke-dashoffset: 1500;\n      animation: " + drawLine + " 3s forwards 1\n    ");
-    return draw;
-});
-var LineShadow = Object(__WEBPACK_IMPORTED_MODULE_1_styled_components__["a" /* default */])('path')(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
-    "\n"])), function (_a) {
-    var animation = _a.animation;
-    var draw = animation && ("\n      stroke-dasharray: 1500;\n      stroke-dashoffset: 1500;\n      animation: " + drawLine + " 3s forwards 1\n    ");
-    return draw;
-});
 var LineChart = /** @class */ (function (_super) {
     __extends(LineChart, _super);
     function LineChart() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.curve = function (points) {
+            //https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
+            var line = function (pointA, pointB) {
+                var lengthX = pointB[0] - pointA[0];
+                var lengthY = pointB[1] - pointA[1];
+                return {
+                    length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+                    angle: Math.atan2(lengthY, lengthX)
+                };
+            };
+            var controlPoint = function (current, previous, next, reverse) {
+                var p = previous || current;
+                var n = next || current;
+                var smoothing = 0.2;
+                var o = line(p, n);
+                var angle = o.angle + (reverse ? Math.PI : 0);
+                var length = o.length * smoothing;
+                var x = current[0] + Math.cos(angle) * length;
+                var y = current[1] + Math.sin(angle) * length;
+                return [x, y];
+            };
+            var bezierCurve = function (point, i, a) {
+                var _a = controlPoint(a[i - 1], a[i - 2], point, false), cpsX = _a[0], cpsY = _a[1];
+                var _b = controlPoint(point, a[i - 1], a[i + 1], true), cpeX = _b[0], cpeY = _b[1];
+                return "C " + cpsX + "," + cpsY + " " + cpeX + "," + cpeY + " " + point[0] + "," + point[1];
+            };
+            var d = points.reduce(function (acc, point, i, a) { return i === 0
+                ? "M " + point[0] + "," + point[1]
+                : acc + " " + bezierCurve(point, i, a); }, '');
+            return d;
+        };
+        return _this;
     }
     LineChart.prototype.render = function () {
+        var _this = this;
         var _a = this.props, data = _a.data, yName = _a.yName, xName = _a.xName, yNameColor = _a.yNameColor, xNameColor = _a.xNameColor, showXGrid = _a.showXGrid, showYGrid = _a.showYGrid, xGridColor = _a.xGridColor, yGridColor = _a.yGridColor, xGridWidth = _a.xGridWidth, yGridWidth = _a.yGridWidth, showXAxis = _a.showXAxis, showYAxis = _a.showYAxis, xAxisColor = _a.xAxisColor, yAxisColor = _a.yAxisColor, xAxisWidth = _a.xAxisWidth, yAxisWidth = _a.yAxisWidth, showXLables = _a.showXLables, showYLables = _a.showYLables, xLabelColor = _a.xLabelColor, yLabelColor = _a.yLabelColor, showValues = _a.showValues, valueColor = _a.valueColor, width = _a.width, height = _a.height, responsive = _a.responsive, yIncrement = _a.yIncrement, paddingTop = _a.paddingTop, paddingBottom = _a.paddingBottom, paddingRight = _a.paddingRight, paddingLeft = _a.paddingLeft, dots = _a.dots, dotColor = _a.dotColor, dotBorderColor = _a.dotBorderColor, lineColor = _a.lineColor, lineWidth = _a.lineWidth, lineCurved = _a.lineCurved, areaColor = _a.areaColor, backgroundColor = _a.backgroundColor, lineBlur = _a.lineBlur, hideLine = _a.hideLine, lineShadow = _a.lineShadow, lineRoundedEnds = _a.lineRoundedEnds, animation = _a.animation;
         var values = data.map(function (item) { return item.value; });
         //Axis Length
@@ -537,54 +556,21 @@ var LineChart = /** @class */ (function (_super) {
         var yValues = values.map(function (item) { return yCoord(item); });
         //Coordinates
         var coords = yValues.map(function (item, i) { return [xValues[i], item]; });
-        //https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
-        var line = function (pointA, pointB) {
-            var lengthX = pointB[0] - pointA[0];
-            var lengthY = pointB[1] - pointA[1];
-            return {
-                length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
-                angle: Math.atan2(lengthY, lengthX)
-            };
-        };
-        var controlPoint = function (current, previous, next, reverse) {
-            var p = previous || current;
-            var n = next || current;
-            var smoothing = 0.2;
-            var o = line(p, n);
-            var angle = o.angle + (reverse ? Math.PI : 0);
-            var length = o.length * smoothing;
-            var x = current[0] + Math.cos(angle) * length;
-            var y = current[1] + Math.sin(angle) * length;
-            return [x, y];
-        };
-        var bezierCommand = function (point, i, a) {
-            var _a = controlPoint(a[i - 1], a[i - 2], point, false), cpsX = _a[0], cpsY = _a[1];
-            var _b = controlPoint(point, a[i - 1], a[i + 1], true), cpeX = _b[0], cpeY = _b[1];
-            return "C " + cpsX + "," + cpsY + " " + cpeX + "," + cpeY + " " + point[0] + "," + point[1];
-        };
-        var svgPath = function (points, command) {
-            var d = points.reduce(function (acc, point, i, a) { return i === 0
-                ? "M " + point[0] + "," + point[1]
-                : acc + " " + command(point, i, a); }, '');
-            return d;
-        };
-        var curve = svgPath(coords, bezierCommand);
         //Line Chart
         var points = coords.map(function (item) { return item[0] + " " + item[1]; }).join(" ");
-        var circles = coords.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](DataDot, { key: "circle_" + i, cx: item[0], cy: item[1], r: "5", color: dotColor, borderColor: dotBorderColor }); });
+        var circles = coords.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["d" /* DataDot */], { key: "circle_" + i, cx: item[0], cy: item[1], r: "5", color: dotColor, borderColor: dotBorderColor }); });
         function guassianBlur(blur, id) {
             return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("filter", { id: id, x: "0", y: "0" },
                 __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("feGaussianBlur", { in: "SourceGraphic", stdDeviation: blur })));
         }
-        function displayLineShadow() {
+        var displayLineShadow = function () {
             var xOffset = lineShadow.xOffset, yOffset = lineShadow.yOffset, spread = lineShadow.spread, color = lineShadow.color;
             var shadowCoords = coords.map(function (item) { return [item[0] + xOffset, item[1] + yOffset]; });
             var shadowPoints = shadowCoords.map(function (item) { return item[0] + xOffset + " " + (item[1] + yOffset); }).join(" ");
-            var shadowCurve = svgPath(shadowCoords, bezierCommand);
-            var shadowLine = lineCurved ? shadowCurve : "M " + shadowPoints;
-            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](LineShadow, { fill: "none", stroke: color, strokeWidth: spread, d: shadowLine, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: 'url(#lineShadow)', animation: animation }));
-        }
-        var lineChart = (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Line, { fill: "none", stroke: lineColor ? (lineColor.constructor === Object ? 'url(#lineGradient)' : lineColor) : '#000', strokeWidth: lineWidth, d: lineCurved ? curve : "M " + points, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: lineBlur && 'url(#lineBlur)', animation: animation }));
+            var shadowLine = lineCurved ? _this.curve(shadowCoords) : "M " + shadowPoints;
+            return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["g" /* LineShadow */], { fill: "none", stroke: color, strokeWidth: spread, d: shadowLine, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: 'url(#lineShadow)', animation: animation }));
+        };
+        var lineChart = (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["f" /* Line */], { fill: "none", stroke: lineColor ? (lineColor.constructor === Object ? 'url(#lineGradient)' : lineColor) : '#000', strokeWidth: lineWidth, d: lineCurved ? this.curve(coords) : "M " + points, strokeLinecap: lineRoundedEnds ? 'round' : 'inherit', filter: lineBlur && 'url(#lineBlur)', animation: animation }));
         //Axis Labels
         var xLabels = data.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("text", { key: "xLabel_" + i, x: xValues[i], y: yBottom + 20 }, item.label); });
         var yLabels = yLabelValues.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("text", { key: "yLabel_" + i, x: paddingLeft - 10, y: yCoord(item) }, item); });
@@ -595,7 +581,7 @@ var LineChart = /** @class */ (function (_super) {
         yGridLines.shift();
         var background = __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("polyline", { fill: backgroundColor, points: paddingLeft + " " + paddingTop + " " + xRight + " " + paddingTop + " " + xRight + " " + yBottom + " " + paddingLeft + " " + yBottom });
         //Data values
-        var dataValues = coords.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](DataValue, { key: "dataValue_" + i, x: item[0], y: item[1] - 10, color: valueColor }, values[i]); });
+        var dataValues = coords.map(function (item, i) { return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["e" /* DataValue */], { key: "dataValue_" + i, x: item[0], y: item[1] - 10, color: valueColor }, values[i]); });
         //Gradients
         function linearGradient(colors, id) {
             var linearConfig = {
@@ -627,8 +613,8 @@ var LineChart = /** @class */ (function (_super) {
         var lineGradient = lineColor && ((lineColor.constructor === Object) && linearGradient(lineColor, 'lineGradient'));
         //Area chart
         var closeArea = xRight + " " + yBottom + " " + paddingLeft + " " + yBottom;
-        var areaLine = lineCurved ? curve + " L " + closeArea : "M " + points + " " + closeArea;
-        var area = areaColor && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("path", { fill: areaColor ? (areaColor.constructor === Object ? 'url(#areaGradient)' : areaColor) : 'none', d: areaLine });
+        var areaLine = lineCurved ? this.curve(coords) + " L " + closeArea : "M " + points + " " + closeArea;
+        var area = areaColor && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["a" /* AreaPath */], { animation: animation, fill: areaColor ? (areaColor.constructor === Object ? 'url(#areaGradient)' : areaColor) : 'none', d: areaLine });
         return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("svg", { width: responsive ? "100%" : width, height: responsive ? "100%" : height, viewBox: "0 0 " + width + " " + height },
                 __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("defs", null,
@@ -638,17 +624,17 @@ var LineChart = /** @class */ (function (_super) {
                     lineShadow && guassianBlur(lineShadow.blur, 'lineShadow')),
                 __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("g", null,
                     backgroundColor && background,
-                    showYGrid && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](YGrid, { color: yGridColor }, yGridLines),
-                    showXGrid && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](XGrid, { color: xGridColor }, xGridLines),
-                    showYAxis && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Axis, { strokeWidth: yAxisWidth, color: yAxisColor, x1: paddingLeft, x2: paddingLeft, y1: paddingTop, y2: yBottom }),
-                    showXAxis && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Axis, { strokeWidth: xAxisWidth, color: xAxisColor, x1: paddingLeft, x2: xRight, y1: yBottom, y2: yBottom })),
+                    showYGrid && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["j" /* YGrid */], { color: yGridColor }, yGridLines),
+                    showXGrid && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["h" /* XGrid */], { color: xGridColor }, xGridLines),
+                    showYAxis && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["b" /* Axis */], { strokeWidth: yAxisWidth, color: yAxisColor, x1: paddingLeft, x2: paddingLeft, y1: paddingTop, y2: yBottom }),
+                    showXAxis && __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["b" /* Axis */], { strokeWidth: xAxisWidth, color: xAxisColor, x1: paddingLeft, x2: xRight, y1: yBottom, y2: yBottom })),
                 area,
-                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](XLabels, { color: xLabelColor },
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["i" /* XLabels */], { color: xLabelColor },
                     showXLables && xLabels,
-                    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](AxisLabel, { color: xNameColor, x: (xAxisLength / 2) + paddingLeft, y: yBottom + 50 }, xName)),
-                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](YLabels, { color: yLabelColor },
+                    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["c" /* AxisLabel */], { color: xNameColor, x: (xAxisLength / 2) + paddingLeft, y: yBottom + 50 }, xName)),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["k" /* YLabels */], { color: yLabelColor },
                     showYLables && yLabels,
-                    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](AxisLabel, { color: yNameColor, x: paddingLeft - 40, y: (yAxisLength / 2) + paddingTop }, yName)),
+                    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1__styles__["c" /* AxisLabel */], { color: yNameColor, x: paddingLeft - 40, y: (yAxisLength / 2) + paddingTop }, yName)),
                 lineShadow && displayLineShadow(),
                 hideLine || lineChart,
                 dots && circles,
@@ -656,12 +642,84 @@ var LineChart = /** @class */ (function (_super) {
     };
     return LineChart;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
-/* harmony default export */ __webpack_exports__["default"] = (LineChart);
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11;
+
 
 
 /***/ }),
-/* 7 */
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LineChart__ = __webpack_require__(9);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["c"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["d"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["e"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["f"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["g"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["h"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["i"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["j"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_0__LineChart__["k"]; });
+
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AxisLabel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return DataValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return XLabels; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return YLabels; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Axis; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return DataDot; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return XGrid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return YGrid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return Line; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return LineShadow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AreaPath; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__(10);
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+var drawLine = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["b" /* keyframes */])(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"], ["\n  from {\n    stroke-dashoffset: 1500;\n  }\n  to {\n    stroke-dashoffset: 0;\n  }\n"])));
+var fade = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["b" /* keyframes */])(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n"], ["\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n"])));
+var AxisLabel = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('text')(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"], ["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 12px;\n  fill: ", ";\n"])), function (props) { return props.color ? props.color : '#000'; });
+var DataValue = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('text')(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"], ["\n  font-size: 10px;\n  fill: ", ";\n  text-anchor: middle;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var XLabels = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('g')(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: right;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var YLabels = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('g')(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"], ["\n  fill: ", ";\n  text-anchor: end;\n  font-size: 13px;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var Axis = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('line')(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n"])), function (props) { return props.color ? props.color : '#000'; });
+var DataDot = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('circle')(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"], ["\n  stroke: ", ";\n  fill: ", ";\n  stroke-width: 2;\n"])), function (props) { return props.borderColor ? props.borderColor : (props.color ? props.color : '#000'); }, function (props) { return props.color ? props.color : '#000'; });
+var XGrid = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('g')(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
+var YGrid = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('g')(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"], ["\n  stroke: ", ";\n  stroke-dasharray: 0;\n  stroke-width: 1;\n"])), function (props) { return props.color ? props.color : '#ccc'; });
+var Line = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('path')(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
+    "\n"])), function (_a) {
+    var animation = _a.animation;
+    var draw = animation && ("\n      stroke-dasharray: 1500;\n      stroke-dashoffset: 1500;\n      animation: " + drawLine + " 3s forwards 1;\n    ");
+    return draw;
+});
+var LineShadow = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('path')(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
+    "\n"])), function (_a) {
+    var animation = _a.animation;
+    var draw = animation && ("\n      stroke-dasharray: 1500;\n      stroke-dashoffset: 1500;\n      animation: " + drawLine + " 3s forwards 1;\n    ");
+    return draw;
+});
+var AreaPath = Object(__WEBPACK_IMPORTED_MODULE_0_styled_components__["a" /* default */])('path')(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  ", "\n"], ["\n  ",
+    "\n"])), function (_a) {
+    var animation = _a.animation;
+    var fadeArea = animation && ("\n      opacity: 0;\n      animation: " + fade + " 2s forwards 1;\n      animation-delay: 1s;\n    ");
+    return fadeArea;
+});
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13;
+
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -674,17 +732,17 @@ var templateObject_1, templateObject_2, templateObject_3, templateObject_4, temp
 /* unused harmony export withTheme */
 /* unused harmony export ServerStyleSheet */
 /* unused harmony export StyleSheetManager */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_plain_object__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_plain_object__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_plain_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_is_plain_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylis__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylis__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylis___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_stylis__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_stylis_rule_sheet__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_stylis_rule_sheet__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_stylis_rule_sheet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_stylis_rule_sheet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_hoist_non_react_statics__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_hoist_non_react_statics__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_hoist_non_react_statics__);
 
 
@@ -2719,10 +2777,10 @@ var styled = _styled(StyledComponent, constructWithOptions);
 /* harmony default export */ __webpack_exports__["a"] = (styled);
 //# sourceMappingURL=styled-components.browser.es.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(8)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(11)(module)))
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -2752,7 +2810,7 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2765,7 +2823,7 @@ module.exports = function(originalModule) {
 
 
 
-var isObject = __webpack_require__(10);
+var isObject = __webpack_require__(13);
 
 function isObjectObject(o) {
   return isObject(o) === true
@@ -2796,7 +2854,7 @@ module.exports = function isPlainObject(o) {
 
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2815,7 +2873,7 @@ module.exports = function isObject(val) {
 
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -4429,7 +4487,7 @@ module.exports = function isObject(val) {
 
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (factory) {
@@ -4483,7 +4541,7 @@ module.exports = function isObject(val) {
 
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -4508,17 +4566,17 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(14)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(17)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(17)();
+  module.exports = __webpack_require__(20)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4534,10 +4592,10 @@ if (process.env.NODE_ENV !== 'production') {
 var emptyFunction = __webpack_require__(1);
 var invariant = __webpack_require__(2);
 var warning = __webpack_require__(5);
-var assign = __webpack_require__(15);
+var assign = __webpack_require__(18);
 
 var ReactPropTypesSecret = __webpack_require__(3);
-var checkPropTypes = __webpack_require__(16);
+var checkPropTypes = __webpack_require__(19);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -5068,7 +5126,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5165,7 +5223,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5232,7 +5290,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5297,7 +5355,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
