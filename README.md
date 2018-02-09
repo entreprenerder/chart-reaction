@@ -94,27 +94,27 @@ const Example = (props) => {
         xNameColor={null}
         showXGrid={true}
         showYGrid={false}
-        xGridColor={'rgba(0,0,0,0.3)'}
-        yGridColor={'rgba(0,0,0,0.3)'}
+        xGridColor='rgba(0,0,0,0.3)'
+        yGridColor='rgba(0,0,0,0.3)'
         xGridWidth={null}
         yGridWidth={null}
         showXAxis={true}
         showYAxis={true}
-        xAxisColor={'rgba(255,255,255,1)'}
-        yAxisColor={'rgba(255,255,255,1)'}
+        xAxisColor='#000'
+        yAxisColor='#000'
         xAxisWidth={2}
         yAxisWidth={2}
         showXLables={true}
-        xLabelColor={'#fff'}
-        yLabelColor={'#fff'}
+        xLabelColor='#000'
+        yLabelColor='#000'
         showYLables={true}
         showValues={true}
-        valueColor={'#fff'}
+        valueColor='#000'
         width={800}
         height={400}
-        dots={false}
-        dotColor={'rgba(29,36,40,1)'}
-        dotBorderColor={'#70B4C6'}
+        dots={true}
+        dotColor='#fff'
+        dotBorderColor='#4A90E2'
         responsive={false}
         yIncrement={2}
         yMax={20}
@@ -124,7 +124,7 @@ const Example = (props) => {
         paddingLeft={90}
         paddingRight={100}
         paddingBottom={50}
-        lineColor={'#70B4C6'}
+        lineColor='#4A90E2'
         lineWidth={3}
         lineCurved={false}
         lineBlur={null}
@@ -137,7 +137,6 @@ const Example = (props) => {
       />
     </div>
   );
-
 }
 
 export default Example;
