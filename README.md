@@ -1,6 +1,8 @@
 # Chart Reaction
 
-[![Latest Unstable Version](https://poser.pugx.org/buonzz/laravel-4-freegeoip/v/unstable.svg)](https://packagist.org/packages/buonzz/laravel-4-freegeoip)
+[![GitHub issues](https://img.shields.io/github/issues/entreprenerder/chart-reaction.svg)](https://github.com/entreprenerder/chart-reaction/issues)
+
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/entreprenerder/chart-reaction.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fentreprenerder%2Fchart-reaction)
 
 `chart-reaction` is a React component library for charting.
 

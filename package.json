@@ -1,6 +1,6 @@
 {
   "name": "chart-reaction",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "React component library for charting",
   "main": "build/index.js",
   "peerDependencies": {
