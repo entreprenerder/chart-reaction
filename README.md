@@ -16,6 +16,35 @@ No need to write endless configuration code just to get a chart to render. Confi
 
 ## Line Chart
 
+### Getting Started
+<!-- prettier-ignore -->
+```JSX
+import React from 'react';
+import {LineChart} from 'chart-reaction';
+
+//This will render a line by itself w/o any grid, axis, or labels
+export cont Example = (props) => {
+  const lineChartData = [
+    {label: "Jan",value: 15},
+    {label: "Feb",value: 10},
+    {label: "Mar",value: 10},
+    {label: "Apr",value: 5},
+    {label: "May",value: 10},
+    {label: "Jun",value: 5},
+    {label: "Jul",value: 8},
+    {label: "Aug",value: 12},
+    {label: "Sep",value: 9},
+    {label: "Oct",value: 17}
+  ];
+
+  return <LineChart data={lineChartData} />;
+}
+```
+NOTE: The component does not require any props to work:
+```JSX
+//This will render an empty 400px X 200px box. This can be useful as a placeholder if there is not yet data to create a line.
+<LineChart />
+```
 ### Example
 <!-- prettier-ignore -->
 ```JSX
