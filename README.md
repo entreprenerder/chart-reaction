@@ -22,8 +22,8 @@ No need to write endless configuration code just to get a chart to render. Confi
 import React from 'react';
 import {LineChart} from 'chart-reaction';
 
-//This will render a line by itself w/o any grid, axis, or labels
-export cont Example = (props) => {
+//This will render a line by itself w/o any grid, axis, or labels.
+export const Example = (props) => {
   const lineChartData = [
     {label: "Jan",value: 15},
     {label: "Feb",value: 10},
@@ -42,16 +42,17 @@ export cont Example = (props) => {
 ```
 NOTE: The component does not require any props to work:
 ```JSX
-//This will render an empty 400px X 200px box. This can be useful as a placeholder if there is not yet data to create a line.
+//This will render an empty 400px X 200px box.
+//This can be useful as a placeholder if there is not yet data to create a line.
 <LineChart />
 ```
-### Example
+### Example w/ More Settings
 <!-- prettier-ignore -->
 ```JSX
 import React from 'react';
 import {LineChart} from 'chart-reaction';
 
-const Example = (props) => {
+export const Example = (props) => {
 
   const lineChartData = [
     {label: "Jan",value: 15},
@@ -141,6 +142,4 @@ const Example = (props) => {
     </div>
   );
 }
-
-export default Example;
 ```
