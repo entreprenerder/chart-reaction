@@ -7,9 +7,11 @@ NOTE: `chart-reaction` is in beta. Right now the `LineChart` component exists. T
 ## A JS Chart Library built for React!
 
 **Self contained components**
+
 No external js or css links are required. All settings are built within the component(like it should be) allowing you to take advantage of React's component life cycle and virtual DOM for any chart updates based on user interaction.
 
 **Simplicty**
+
 No need to write endless configuration code just to get a chart to render. Configure your chart through `props` and just use the ones you need.
 
 ## Line Chart
@@ -23,46 +25,16 @@ import {LineChart} from 'chart-reaction';
 const Example = (props) => {
 
   const lineChartData = [
-    {
-      label: "Jan",
-      value: 15
-    },
-    {
-      label: "Feb",
-      value: 10
-    },
-    {
-      label: "Mar",
-      value: 10
-    },
-    {
-      label: "Apr",
-      value: 5
-    },
-    {
-      label: "May",
-      value: 10
-    },
-    {
-      label: "Jun",
-      value: 5
-    },
-    {
-      label: "Jul",
-      value: 8
-    },
-    {
-      label: "Aug",
-      value: 12
-    },
-    {
-      label: "Sep",
-      value: 9
-    },
-    {
-      label: "Oct",
-      value: 17
-    }
+    {label: "Jan",value: 15},
+    {label: "Feb",value: 10},
+    {label: "Mar",value: 10},
+    {label: "Apr",value: 5},
+    {label: "May",value: 10},
+    {label: "Jun",value: 5},
+    {label: "Jul",value: 8},
+    {label: "Aug",value: 12},
+    {label: "Sep",value: 9},
+    {label: "Oct",value: 17}
   ];
 
   const areaColor = {
