@@ -514,7 +514,6 @@ var LineChart = exports.LineChart = function (_React$Component) {
   _createClass(LineChart, [{
     key: 'curve',
     value: function curve(points) {
-      //https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
       var line = function line(pointA, pointB) {
         var lengthX = pointB[0] - pointA[0];
         var lengthY = pointB[1] - pointA[1];
@@ -584,8 +583,6 @@ var LineChart = exports.LineChart = function (_React$Component) {
           yLabelColor = _props.yLabelColor,
           showValues = _props.showValues,
           valueColor = _props.valueColor,
-          width = _props.width,
-          height = _props.height,
           responsive = _props.responsive,
           yIncrement = _props.yIncrement,
           paddingTop = _props.paddingTop,
@@ -612,12 +609,16 @@ var LineChart = exports.LineChart = function (_React$Component) {
       });
 
       //Axis Length
+      var width = this.props.width || 400;
+      var height = this.props.height || 200;
       var yMin = this.props.yMin ? this.props.yMin : 0;
       var yMax = this.props.yMax ? this.props.yMax : Math.max.apply(Math, _toConsumableArray(values));
-      var yAxisLength = height - paddingTop - paddingBottom;
-      var xAxisLength = width - paddingLeft - paddingRight;
-      var yBottom = yAxisLength + paddingTop;
-      var xRight = paddingLeft + xAxisLength;
+      var xLeft = paddingLeft || 0;
+      var xAxisLength = width - xLeft - (paddingRight || 0);
+      var xRight = xLeft + xAxisLength;
+      var yTop = paddingTop || 0;
+      var yAxisLength = height - yTop - (paddingBottom || 0);
+      var yBottom = yAxisLength + yTop;
 
       //Axis Scaling
       var numberOfPoints = data.length;
@@ -625,8 +626,8 @@ var LineChart = exports.LineChart = function (_React$Component) {
       var xScale = xAxisLength / (numberOfPoints - 1);
 
       //X Coordinates
-      var xValues = [paddingLeft];
-      var horizontalValue = paddingLeft;
+      var xValues = [xLeft];
+      var horizontalValue = xLeft;
       for (var i = 1; i < numberOfPoints; i++) {
         horizontalValue = horizontalValue + xScale;
         xValues.push(horizontalValue);
@@ -634,7 +635,7 @@ var LineChart = exports.LineChart = function (_React$Component) {
 
       //Y Coordinates
       function yCoord(value) {
-        return yAxisLength - value * yScale + yScale * yMin + paddingTop;
+        return yAxisLength - value * yScale + yScale * yMin + yTop;
       }
 
       var yLabelValues = [yMin];
@@ -715,22 +716,22 @@ var LineChart = exports.LineChart = function (_React$Component) {
       var yLabels = yLabelValues.map(function (item, i) {
         return _react2.default.createElement(
           'text',
-          { key: 'yLabel_' + i, x: paddingLeft - 10, y: yCoord(item) },
+          { key: 'yLabel_' + i, x: xLeft - 10, y: yCoord(item) },
           item
         );
       });
 
       //Grids
       var xGridLines = yLabelValues.map(function (item, i) {
-        return _react2.default.createElement('line', { key: 'xGridLine_' + i, x1: paddingLeft, x2: xRight, y1: yCoord(item), y2: yCoord(item), strokeWidth: yGridWidth });
+        return _react2.default.createElement('line', { key: 'xGridLine_' + i, x1: xLeft, x2: xRight, y1: yCoord(item), y2: yCoord(item), strokeWidth: yGridWidth });
       });
       xGridLines.shift();
       var yGridLines = xValues.map(function (item, i) {
-        return _react2.default.createElement('line', { key: 'yGridLine_' + i, x1: item, x2: item, y1: paddingTop, y2: yBottom, strokeWidth: xGridWidth });
+        return _react2.default.createElement('line', { key: 'yGridLine_' + i, x1: item, x2: item, y1: yTop, y2: yBottom, strokeWidth: xGridWidth });
       });
       yGridLines.shift();
 
-      var background = _react2.default.createElement('polyline', { fill: backgroundColor, points: paddingLeft + ' ' + paddingTop + ' ' + xRight + ' ' + paddingTop + ' ' + xRight + ' ' + yBottom + ' ' + paddingLeft + ' ' + yBottom });
+      var background = _react2.default.createElement('polyline', { fill: backgroundColor, points: xLeft + ' ' + yTop + ' ' + xRight + ' ' + yTop + ' ' + xRight + ' ' + yBottom + ' ' + xLeft + ' ' + yBottom });
 
       //Data values
       var dataValues = coords.map(function (item, i) {
@@ -779,7 +780,7 @@ var LineChart = exports.LineChart = function (_React$Component) {
       var lineGradient = lineColor && lineColor.constructor === Object && linearGradient(lineColor, 'lineGradient');
 
       //Area chart
-      var closeArea = xRight + ' ' + yBottom + ' ' + paddingLeft + ' ' + yBottom;
+      var closeArea = xRight + ' ' + yBottom + ' ' + xLeft + ' ' + yBottom;
       var areaLine = lineCurved ? this.curve(coords) + ' L ' + closeArea : 'M ' + points + ' ' + closeArea;
       var area = areaColor && _react2.default.createElement(_styles.AreaPath, { animation: animation, fill: areaColor ? areaColor.constructor === Object ? 'url(#areaGradient)' : areaColor : 'none', d: areaLine });
 
@@ -811,8 +812,8 @@ var LineChart = exports.LineChart = function (_React$Component) {
               { color: xGridColor },
               xGridLines
             ),
-            showYAxis && _react2.default.createElement(_styles.Axis, { strokeWidth: yAxisWidth, color: yAxisColor, x1: paddingLeft, x2: paddingLeft, y1: paddingTop, y2: yBottom }),
-            showXAxis && _react2.default.createElement(_styles.Axis, { strokeWidth: xAxisWidth, color: xAxisColor, x1: paddingLeft, x2: xRight, y1: yBottom, y2: yBottom })
+            showYAxis && _react2.default.createElement(_styles.Axis, { strokeWidth: yAxisWidth, color: yAxisColor, x1: xLeft, x2: xLeft, y1: yTop, y2: yBottom }),
+            showXAxis && _react2.default.createElement(_styles.Axis, { strokeWidth: xAxisWidth, color: xAxisColor, x1: xLeft, x2: xRight, y1: yBottom, y2: yBottom })
           ),
           area,
           _react2.default.createElement(
@@ -821,7 +822,7 @@ var LineChart = exports.LineChart = function (_React$Component) {
             showXLables && xLabels,
             _react2.default.createElement(
               _styles.AxisLabel,
-              { color: xNameColor, x: xAxisLength / 2 + paddingLeft, y: yBottom + 50 },
+              { color: xNameColor, x: xAxisLength / 2 + xLeft, y: yBottom + 50 },
               xName
             )
           ),
@@ -831,7 +832,7 @@ var LineChart = exports.LineChart = function (_React$Component) {
             showYLables && yLabels,
             _react2.default.createElement(
               _styles.AxisLabel,
-              { color: yNameColor, x: paddingLeft - 40, y: yAxisLength / 2 + paddingTop },
+              { color: yNameColor, x: xLeft - 40, y: yAxisLength / 2 + yTop },
               yName
             )
           ),

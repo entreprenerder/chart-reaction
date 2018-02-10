@@ -14,11 +14,9 @@ import {
 } from './styles';
 
 
-
 export class LineChart extends React.Component {
 
   curve(points) {
-    //https://medium.com/@francoisromain/smooth-a-svg-path-with-cubic-bezier-curves-e37b49d46c74
     const line = (pointA, pointB) => {
       const lengthX = pointB[0] - pointA[0]
       const lengthY = pointB[1] - pointA[1]
@@ -79,8 +77,6 @@ export class LineChart extends React.Component {
       yLabelColor,
       showValues,
       valueColor,
-      width,
-      height,
       responsive,
       yIncrement,
       paddingTop,
@@ -105,12 +101,18 @@ export class LineChart extends React.Component {
     const values = data.map((item) => item.value);
 
     //Axis Length
+    const width = this.props.width || 400;
+    const height = this.props.height || 200;
     const yMin = this.props.yMin ? this.props.yMin : 0;
     const yMax = this.props.yMax ? this.props.yMax : Math.max(...values);
-    const yAxisLength = height-paddingTop-paddingBottom;
-    const xAxisLength = width-paddingLeft-paddingRight;
-    const yBottom = yAxisLength+paddingTop;
-    const xRight = paddingLeft+xAxisLength;
+    const xLeft = paddingLeft || 0;
+    const xAxisLength = width-xLeft-(paddingRight || 0);
+    const xRight = xLeft+xAxisLength;
+    const yTop = paddingTop || 0;
+    const yAxisLength = height-yTop-(paddingBottom || 0);
+    const yBottom = yAxisLength+yTop;
+
+
 
     //Axis Scaling
     const numberOfPoints = data.length;
@@ -118,8 +120,8 @@ export class LineChart extends React.Component {
     const xScale = xAxisLength/(numberOfPoints - 1);
 
     //X Coordinates
-    const xValues = [paddingLeft];
-    let horizontalValue = paddingLeft;
+    const xValues = [xLeft];
+    let horizontalValue = xLeft;
     for (let i=1; i<numberOfPoints; i++) {
       horizontalValue = horizontalValue + xScale;
       xValues.push(horizontalValue);
@@ -127,7 +129,7 @@ export class LineChart extends React.Component {
 
     //Y Coordinates
     function yCoord(value) {
-      return (yAxisLength-(value*yScale))+(yScale*yMin)+paddingTop;
+      return (yAxisLength-(value*yScale))+(yScale*yMin)+yTop;
     }
 
     const yLabelValues = [yMin];
@@ -183,15 +185,15 @@ export class LineChart extends React.Component {
 
     //Axis Labels
     const xLabels = data.map((item, i) => <text key={`xLabel_${i}`} x={xValues[i]} y={yBottom+20}>{item.label}</text>);
-    const yLabels = yLabelValues.map((item, i) => <text key={`yLabel_${i}`} x={paddingLeft-10} y={yCoord(item)}>{item}</text>);
+    const yLabels = yLabelValues.map((item, i) => <text key={`yLabel_${i}`} x={xLeft-10} y={yCoord(item)}>{item}</text>);
 
     //Grids
-    const xGridLines = yLabelValues.map((item, i) => <line key={`xGridLine_${i}`} x1={paddingLeft} x2={xRight} y1={yCoord(item)} y2={yCoord(item)} strokeWidth={yGridWidth} />);
+    const xGridLines = yLabelValues.map((item, i) => <line key={`xGridLine_${i}`} x1={xLeft} x2={xRight} y1={yCoord(item)} y2={yCoord(item)} strokeWidth={yGridWidth} />);
     xGridLines.shift();
-    const yGridLines = xValues.map((item,i) => <line key={`yGridLine_${i}`} x1={item} x2={item} y1={paddingTop} y2={yBottom} strokeWidth={xGridWidth} />);
+    const yGridLines = xValues.map((item,i) => <line key={`yGridLine_${i}`} x1={item} x2={item} y1={yTop} y2={yBottom} strokeWidth={xGridWidth} />);
     yGridLines.shift();
 
-    const background = <polyline fill={backgroundColor} points={`${paddingLeft} ${paddingTop} ${xRight} ${paddingTop} ${xRight} ${yBottom} ${paddingLeft} ${yBottom}`} />
+    const background = <polyline fill={backgroundColor} points={`${xLeft} ${yTop} ${xRight} ${yTop} ${xRight} ${yBottom} ${xLeft} ${yBottom}`} />
 
     //Data values
     const dataValues = coords.map((item, i) => <DataValue key={`dataValue_${i}`} x={item[0]} y={item[1]-10} color={valueColor}>{values[i]}</DataValue>)
@@ -233,7 +235,7 @@ export class LineChart extends React.Component {
 
 
     //Area chart
-    const closeArea = `${xRight} ${yBottom} ${paddingLeft} ${yBottom}`;
+    const closeArea = `${xRight} ${yBottom} ${xLeft} ${yBottom}`;
     const areaLine = lineCurved ? `${this.curve(coords)} L ${closeArea}` : `M ${points} ${closeArea}`;
     const area = areaColor && <AreaPath animation={animation} fill={areaColor ? (areaColor.constructor === Object ? 'url(#areaGradient)' : areaColor) : 'none'} d={areaLine} />;
 
@@ -250,17 +252,17 @@ export class LineChart extends React.Component {
             {backgroundColor && background}
             {showYGrid && <YGrid color={yGridColor}>{yGridLines}</YGrid>}
             {showXGrid && <XGrid color={xGridColor}>{xGridLines}</XGrid>}
-            {showYAxis && <Axis strokeWidth={yAxisWidth} color={yAxisColor} x1={paddingLeft} x2={paddingLeft} y1={paddingTop} y2={yBottom} />}
-            {showXAxis && <Axis strokeWidth={xAxisWidth} color={xAxisColor} x1={paddingLeft} x2={xRight} y1={yBottom} y2={yBottom} />}
+            {showYAxis && <Axis strokeWidth={yAxisWidth} color={yAxisColor} x1={xLeft} x2={xLeft} y1={yTop} y2={yBottom} />}
+            {showXAxis && <Axis strokeWidth={xAxisWidth} color={xAxisColor} x1={xLeft} x2={xRight} y1={yBottom} y2={yBottom} />}
           </g>
           {area}
           <XLabels color={xLabelColor}>
             {showXLables && xLabels}
-            <AxisLabel color={xNameColor} x={(xAxisLength/2)+paddingLeft} y={yBottom + 50}>{xName}</AxisLabel>
+            <AxisLabel color={xNameColor} x={(xAxisLength/2)+xLeft} y={yBottom + 50}>{xName}</AxisLabel>
           </XLabels>
           <YLabels color={yLabelColor}>
             {showYLables && yLabels}
-            <AxisLabel color={yNameColor} x={paddingLeft-40} y={(yAxisLength/2)+paddingTop}>{yName}</AxisLabel>
+            <AxisLabel color={yNameColor} x={xLeft-40} y={(yAxisLength/2)+yTop}>{yName}</AxisLabel>
           </YLabels>
           {lineShadow && displayLineShadow()}
           {hideLine || lineChart}

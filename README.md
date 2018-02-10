@@ -2,15 +2,17 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/entreprenerder/chart-reaction.svg)](https://github.com/entreprenerder/chart-reaction/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/entreprenerder/chart-reaction.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fentreprenerder%2Fchart-reaction)
 
-`chart-reaction` is a React component library for charting.
+NOTE: `chart-reaction` is in beta. Right now the `LineChart` component exists. There will be more features and more variety of charts coming soon. Thank you for your patience :)
 
-It is still very much in beta. Right now the `LineChart` component exists. There will be more features and more variety of charts coming soon.
+## A JS Chart Library built for React!
 
-There will also be more documentation coming soon. Thank you for your patience :)
+**Self contained components**
+No external js or css links are required. All settings are built within the component(like it should be) allowing you to take advantage of React's component life cycle and virtual DOM for any chart updates based on user interaction.
 
+**Simplicty**
+No need to write endless configuration code just to get a chart to render. Configure your chart through `props` and just use the ones you need.
 
 ## Line Chart
-
 
 ### Example
 <!-- prettier-ignore -->
