@@ -143,3 +143,46 @@ export const Example = (props) => {
   );
 }
 ```
+
+### Properties
+
+#### data <array>
+```JSX
+//label will show the label for that x value.
+[
+  {
+    label: <string>,
+    value: <number>
+  }
+]
+```
+
+#### width <number>
+default: 400
+
+#### height <number>
+default: 200
+
+#### showXAxis <boolean>
+default: false
+
+#### showYAxis <boolean>
+default: false
+
+#### xAxisColor <string(color name | rgba | hexcolor)>
+default: "#000"
+
+#### yAxisColor <string(color name | rgba | hexcolor)>
+default: "#000"
+
+#### showXGrid <boolean>
+default: false
+
+#### showYGrid <boolean>
+default: false
+
+#### xGridColor <string(color name | rgba | hexcolor)>
+default: "#CCC"
+
+#### yGridColor <string(color name | rgba | hexcolor)>
+default: "#CCC"
