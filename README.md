@@ -157,32 +157,32 @@ export const Example = (props) => {
 ]
 ```
 
-#### width <number>
-default: 400
+#### width (number)
+ default: 400
 
 #### height <number>
-default: 200
+ default: 200
 
 #### showXAxis <boolean>
-default: false
+ default: false
 
 #### showYAxis <boolean>
-default: false
+ default: false
 
 #### xAxisColor <string(color name | rgba | hexcolor)>
-default: "#000"
+ default: "#000"
 
 #### yAxisColor <string(color name | rgba | hexcolor)>
-default: "#000"
+ default: "#000"
 
 #### showXGrid <boolean>
-default: false
+ default: false
 
 #### showYGrid <boolean>
-default: false
+ default: false
 
 #### xGridColor <string(color name | rgba | hexcolor)>
-default: "#CCC"
+ default: "#CCC"
 
 #### yGridColor <string(color name | rgba | hexcolor)>
-default: "#CCC"
+ default: "#CCC"
